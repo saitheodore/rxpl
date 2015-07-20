@@ -9,6 +9,7 @@
 
 namespace RXPL.AD.Service
 {
+    using System.Configuration;
     using System.Diagnostics;
 
     using LoggingExtensions.Logging;
@@ -46,18 +47,20 @@ namespace RXPL.AD.Service
 
             try
             {
-                var scriptFile = @"powershell.exe";
+                var command = @"powershell.exe";
+                var scriptFile = ConfigurationManager.AppSettings["PasswordResetScript"];
 
                 var process = new Process
                                   {
                                       StartInfo =
                                           {
-                                              FileName = scriptFile,
+                                              FileName = command,
                                               Arguments =
                                                   string.Format(
-                                                      @"D:\Sai\Projects\RXPL.AD.Service\test.ps1 -employeeID {0} -password {1}",
+                                                      @"{2} -employeeID {0} -password {1}",
                                                       accountDetails.UserId,
-                                                      accountDetails.Password)
+                                                      accountDetails.Password,
+                                                      scriptFile)
                                           }
                                   };
                 process.Start();
