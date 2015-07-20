@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXPL.AD.Service", "RXPL.AD.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXPL.Services.Host", "RXPL.Services.Host\RXPL.Services.Host.csproj", "{78EBD84A-B371-42FD-85B1-CA45E06C549D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{657FC701-E505-4999-9B74-E21226DEFA91}"
+	ProjectSection(SolutionItems) = preProject
+		reset_password.ps1 = reset_password.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

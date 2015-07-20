@@ -46,7 +46,7 @@ namespace RXPL.AD.Service
 
             try
             {
-                var scriptFile = @"D:\Sai\Projects\RXPL.AD.Service\test.vbs";
+                var scriptFile = @"powershell.exe";
 
                 var process = new Process
                                   {
@@ -55,7 +55,7 @@ namespace RXPL.AD.Service
                                               FileName = scriptFile,
                                               Arguments =
                                                   string.Format(
-                                                      " /userId:{0} /password:{1}",
+                                                      @"D:\Sai\Projects\RXPL.AD.Service\test.ps1 -employeeID {0} -password {1}",
                                                       accountDetails.UserId,
                                                       accountDetails.Password)
                                           }
