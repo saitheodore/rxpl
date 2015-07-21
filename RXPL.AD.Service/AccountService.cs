@@ -9,8 +9,11 @@
 
 namespace RXPL.AD.Service
 {
+    using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics;
+    using System.IO;
+    using System.Management.Automation;
 
     using LoggingExtensions.Logging;
 
@@ -47,24 +50,18 @@ namespace RXPL.AD.Service
 
             try
             {
-                var command = @"powershell.exe";
                 var scriptFile = ConfigurationManager.AppSettings["PasswordResetScript"];
-
-                var process = new Process
-                                  {
-                                      StartInfo =
-                                          {
-                                              FileName = command,
-                                              Arguments =
-                                                  string.Format(
-                                                      @"{2} -employeeID {0} -password {1}",
-                                                      accountDetails.UserId,
-                                                      accountDetails.Password,
-                                                      scriptFile)
-                                          }
-                                  };
-                process.Start();
-                process.WaitForExit();
+                using (var powerShell = PowerShell.Create())
+                {
+                    powerShell.AddScript(File.ReadAllText(scriptFile));
+                    powerShell.AddParameters(
+                        new Dictionary<string, string>
+                            {
+                                { "employeeID", accountDetails.UserId },
+                                { "password", accountDetails.Password }
+                            });
+                    powerShell.Invoke();
+                }
 
                 this.logger.Info(() => string.Format("Password has been reset for user: {0}", accountDetails.UserId));
             }
@@ -73,6 +70,7 @@ namespace RXPL.AD.Service
                 this.logger.Error(
                     () => string.Format("Error occured while resetting password for user: {0}", accountDetails.UserId),
                     ex);
+                return false;
             }
 
             return true;
