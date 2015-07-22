@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{
 		Installer\Instructions.txt = Installer\Instructions.txt
 		Installer\log4net.dll = Installer\log4net.dll
 		Installer\log4net.xml = Installer\log4net.xml
+		Installer\reset_password.ps1 = Installer\reset_password.ps1
 		Installer\RXPL.AD.Service.dll = Installer\RXPL.AD.Service.dll
 		Installer\RXPL.AD.Service.pdb = Installer\RXPL.AD.Service.pdb
 		Installer\RXPL.Services.Host.exe = Installer\RXPL.Services.Host.exe
