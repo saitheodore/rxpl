@@ -12,6 +12,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{657F
 		reset_password.ps1 = reset_password.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{06AB6A99-3FC8-4CAD-9D59-FF7B8A483A7C}"
+	ProjectSection(SolutionItems) = preProject
+		Installer\installer_x64.bat = Installer\installer_x64.bat
+		Installer\installer_x86.bat = Installer\installer_x86.bat
+		Installer\log4net.dll = Installer\log4net.dll
+		Installer\log4net.xml = Installer\log4net.xml
+		Installer\reset_password.ps1 = Installer\reset_password.ps1
+		Installer\RXPL.AD.Service.dll = Installer\RXPL.AD.Service.dll
+		Installer\RXPL.AD.Service.pdb = Installer\RXPL.AD.Service.pdb
+		Installer\RXPL.Services.Host.exe = Installer\RXPL.Services.Host.exe
+		Installer\RXPL.Services.Host.exe.config = Installer\RXPL.Services.Host.exe.config
+		Installer\RXPL.Services.Host.pdb = Installer\RXPL.Services.Host.pdb
+		Installer\this.Log-log4net.dll = Installer\this.Log-log4net.dll
+		Installer\this.Log.dll = Installer\this.Log.dll
+		Installer\uninstall_x64.bat = Installer\uninstall_x64.bat
+		Installer\uninstall_x86.bat = Installer\uninstall_x86.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

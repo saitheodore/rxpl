@@ -9,6 +9,7 @@
 
 namespace RXPL.AD.Service
 {
+    using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics;
@@ -50,7 +51,8 @@ namespace RXPL.AD.Service
 
             try
             {
-                var scriptFile = ConfigurationManager.AppSettings["PasswordResetScript"];
+                var scriptFile = AppDomain.CurrentDomain.BaseDirectory
+                                 + ConfigurationManager.AppSettings["PasswordResetScript"];
                 using (var powerShell = PowerShell.Create())
                 {
                     powerShell.AddScript(File.ReadAllText(scriptFile));
