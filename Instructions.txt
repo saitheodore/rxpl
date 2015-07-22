@@ -1,0 +1,32 @@
+Installation
+--------------------------------------------------------------------------------------
+1. Run the installer_x64.bat (64 bit) or installer_x86.bat (32 bit) according to the server platform. Please make sure that it is executed with Administrator Priviliges
+2. This script will install the service and start it too.
+3. Before proceeding, please ensure that the service is running from the Windows Service panel, the service name is RXPL Account Services
+4. By default the service runs under port 9009 of the host machine, if you want to change the port open the "RXPL.Services.Host.exe.config" file and change the value of "ServicePort" entry in the file to the desired one. Make sure that you restart the service once the changes are made.
+
+--------------------------------------------------------------------------------------
+Service Configuration and testing
+--------------------------------------------------------------------------------------
+1. Make sure that the service is accessible. From a browser window access the url http://hostname:9009/accountservice (replace "hostname" with the name/ip of the host machine)
+2. You should see a response similar to the text below
+
+<AccountDetails 
+    xmlns="http://schemas.datacontract.org/2004/07/RXPL.AD.Service" 
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <Password>TempPassword</Password>
+    <UserId>myUser</UserId>
+</AccountDetails>
+
+3. To use the password reset service, you need to hit the URL http://hostname:9009/accountservice/reset (replace "hostname" with the name/ip of the host machine)
+4. A sample request json is as follows
+
+{
+	"Password" : "testPass",
+	"UserId" : "testuser2"
+}
+
+5. You can use PostMan client in Chrome to send this request to the URL.
+6. Install PostMan client from Chrome Web Store
+7. From PostMan select POST as the method, specify the url and send the json as mentioned above.
+8. Once the request is processed, you should either see a true or false as the response.
