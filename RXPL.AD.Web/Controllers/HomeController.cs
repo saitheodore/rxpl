@@ -11,6 +11,7 @@ namespace RXPL.AD.Web.Controllers
 {
     using System;
     using System.Configuration;
+    using System.Net;
     using System.Web.Mvc;
 
     using LoggingExtensions.Logging;
@@ -36,6 +37,16 @@ namespace RXPL.AD.Web.Controllers
         /// </returns>
         public ActionResult Index(string userId)
         {
+            Log.GetLoggerFor(this.GetType().Name)
+                .Info(
+                    this.Request.UrlReferrer != null
+                        ? string.Format("Index GET Request originated from {0}", this.Request.UrlReferrer.AbsoluteUri)
+                        : "Index GET Request directly invoked");
+            if (this.Request.UrlReferrer != null && this.Request.UrlReferrer.Host != this.Request.Url.Host)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden, "Suspicious request.");
+            }
+
             if (string.IsNullOrEmpty(userId))
             {
                 Log.GetLoggerFor(this.GetType().Name)
@@ -64,6 +75,22 @@ namespace RXPL.AD.Web.Controllers
         {
             try
             {
+                if (!this.ModelState.IsValid)
+                {
+                    return this.View("Index", directoryUser);
+                }
+
+                Log.GetLoggerFor(this.GetType().Name)
+                .Info(
+                    this.Request.UrlReferrer != null
+                        ? string.Format("Index POST Request originated from {0}", this.Request.UrlReferrer.AbsoluteUri)
+                        : "Index POST Request directly invoked");
+
+                if (this.Request.UrlReferrer == null || this.Request.UrlReferrer.Host != this.Request.Url.Host)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden, "Suspicious request.");
+                }
+
                 var serviceUrl = ConfigurationManager.AppSettings["ADServiceUrl"];
                 var serviceHelper = new ServiceHelper(serviceUrl);
                 var userDetails = new { directoryUser.UserId, directoryUser.Password };
@@ -92,6 +119,16 @@ namespace RXPL.AD.Web.Controllers
         /// </returns>
         public ActionResult Intermediate()
         {
+            Log.GetLoggerFor(this.GetType().Name)
+                .Info(
+                    this.Request.UrlReferrer != null
+                        ? string.Format("Intermediate GET Request originated from {0}", this.Request.UrlReferrer.AbsoluteUri)
+                        : "Intermediate GET Request directly invoked");
+            if (this.Request.UrlReferrer != null && this.Request.UrlReferrer.Host != this.Request.Url.Host)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Forbidden, "Suspicious request.");
+            }
+
             var directoryUser = new DirectoryUser { UserId = (string)this.TempData["UserId"] };
             return this.View("Index", directoryUser);
         }
