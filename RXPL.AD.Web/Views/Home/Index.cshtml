@@ -1,0 +1,47 @@
+﻿@model RXPL.AD.Web.Models.DirectoryUser
+@{
+    ViewBag.Title = "Reset Password";
+}
+
+<div class="jumbotron">
+    <h3>Reset Password</h3>
+    <p class="lead">Reset your Active Directory password here.</p>
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "reset-form", @class = "smart-form client-form" }))
+{
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3">
+            <div class="well no-padding">
+                <header>Credentials</header>
+                <fieldset>
+                    <section>
+                        <label class="label">USER ID</label>
+                        <label class="input">
+                            @Html.TextBoxFor(m => m.UserId, new { @readonly = "readonly" })
+                            @Html.ValidationMessageFor(m => m.UserId, "", new { @style = "color:red;!important" })
+                            @Html.ValidationSummary(true, "", new { @style = "color:red;!important;" })
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label" style="padding-left: 0px;">PASSWORD</label>
+                        <label class="input">
+                            @Html.PasswordFor(m => m.Password, new { id = "txtBxUserPass" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @style = "color:red;!important" })
+                            @Html.ValidationSummary(true, "", new { @style = "color:red;!important;" })
+                            <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label-success">@ViewBag.Message</label>
+                    </section>
+                    <footer>
+                        <button type="submit" value="submit" name="submit" class="btn btn-primary btn-lg btn-block">
+                            Reset Password
+                        </button>
+                    </footer>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+}
