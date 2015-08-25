@@ -1,0 +1,12 @@
+This is the instructions for updating the RXPL Account Services (Windows Service)
+---------------------------------------------------------------------------------
+
+1. Copy the following files from https://github.com/saitheodore/rxpl/tree/master/Installer
+	a. RXPL.Services.Host.exe
+	b. RXPL.Services.Host.pdb
+	c. RXPL.AD.Service.dll
+	d. RXPL.AD.Service.pdb
+	
+2. Stop the RXPL Account Services Windows Service
+3. Replace the above files at the location where the windows service was installed.
+4. Once replaced, start the server.
