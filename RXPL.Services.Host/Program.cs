@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs" company="Consilio">
+// <copyright file="Program.cs" company="RXPL">
 //   All Rights Reserved.
 // </copyright>
 // <summary>

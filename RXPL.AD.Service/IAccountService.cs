@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IAccountService.cs" company="Consilio">
+// <copyright file="IAccountService.cs" company="RXPL">
 //   All Rights Reserved.
 // </copyright>
 // <summary>

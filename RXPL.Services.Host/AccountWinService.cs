@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AccountWinService.cs" company="Consilio">
+// <copyright file="AccountWinService.cs" company="RXPL">
 //   All Rights Reserved.
 // </copyright>
 // <summary>

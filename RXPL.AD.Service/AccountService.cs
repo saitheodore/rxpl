@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AccountService.cs" company="Consilio">
+// <copyright file="AccountService.cs" company="RXPL">
 //   All Rights Reserved.
 // </copyright>
 // <summary>
@@ -12,9 +12,11 @@ namespace RXPL.AD.Service
     using System;
     using System.Collections.Generic;
     using System.Configuration;
-    using System.Diagnostics;
     using System.IO;
     using System.Management.Automation;
+    using System.Net;
+    using System.ServiceModel.Web;
+    using System.Text;
 
     using LoggingExtensions.Logging;
 
@@ -26,7 +28,7 @@ namespace RXPL.AD.Service
         /// <summary>
         /// The logger.
         /// </summary>
-        private ILog logger;
+        private readonly ILog logger;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountService"/> class.
@@ -63,16 +65,27 @@ namespace RXPL.AD.Service
                                 { "password", accountDetails.Password }
                             });
                     powerShell.Invoke();
+                    if (powerShell.Streams.Error.Count > 0)
+                    {
+                        var errorMessage = new StringBuilder();
+                        foreach (var errorRecord in powerShell.Streams.Error)
+                        {
+                            errorMessage.AppendLine(errorRecord.Exception.Message);
+                        }
+
+                        this.logger.Error(() => errorMessage.ToString());
+                        throw new WebFaultException<string>(errorMessage.ToString(), HttpStatusCode.BadRequest);
+                    }
                 }
 
                 this.logger.Info(() => string.Format("Password has been reset for user: {0}", accountDetails.UserId));
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 this.logger.Error(
                     () => string.Format("Error occured while resetting password for user: {0}", accountDetails.UserId),
                     ex);
-                return false;
+                throw;
             }
 
             return true;

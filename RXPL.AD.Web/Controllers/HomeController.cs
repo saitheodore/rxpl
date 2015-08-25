@@ -105,7 +105,9 @@ namespace RXPL.AD.Web.Controllers
                 Log.GetLoggerFor(this.GetType().Name)
                     .Error(() => ex.ToString());
                 this.ViewBag.Message =
-                    "An error occured while processing the request. Please contact the administrator.";
+                    string.Format(
+                        "An error occured while processing the request. Please contact the administrator. {0}",
+                        ex.Message);
             }
 
             return this.View(directoryUser);

@@ -3767,32 +3767,6 @@ table.fc-border-separate {
     color: #99a4ac;
 }
 
-/*
-
-	 Copyright 2014 - Consilio Review Application : rennzer.com
-	
-	 Table of Contents
-	 ---------------------------------------------------------------
-	
-	 - Main
-	 - Header
-	 - Content
-	 - Edit box
-	 - Timestamp
-	 - Helpers
-	 - Fullscreen
-	 - Styling
-	 - Custom styles
-	 - Icons - A few used examples
-	 - RTL support
-	 - Clearfix
-	 - Examples (minimalistic in grid)
-	 - Examples (lists)
-	
-	 */
-/*
-	 * MAIN
-	 */
 article.sortable-grid {
     min-height: 30px;
 }
