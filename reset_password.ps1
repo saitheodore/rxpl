@@ -10,6 +10,11 @@ Param(
 $filter = 'SamAccountName -like "*' + $employeeID + '*"'
 $user = Get-ADUser -Filter $filter
 
+if($user -ne $null -and $user -is [system.array])
+{
+    throw "Multiple users found with userid: $employeeid"
+}
+
 if($user -eq $null -or $user.SamAccountName -eq $null -or $user.SamAccountName -eq "")
 {
     throw "User with id $employeeID could not be found"

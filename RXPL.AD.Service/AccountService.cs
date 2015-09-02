@@ -20,6 +20,8 @@ namespace RXPL.AD.Service
 
     using LoggingExtensions.Logging;
 
+    using RXPL.AD.Service.Properties;
+
     /// <summary>
     /// The account service.
     /// </summary>
@@ -53,11 +55,13 @@ namespace RXPL.AD.Service
 
             try
             {
-                var scriptFile = AppDomain.CurrentDomain.BaseDirectory
-                                 + ConfigurationManager.AppSettings["PasswordResetScript"];
+                /*var scriptFile = AppDomain.CurrentDomain.BaseDirectory
+                                 + ConfigurationManager.AppSettings["PasswordResetScript"];*/
+                var resetScript = Resources.ResetScript;
+
                 using (var powerShell = PowerShell.Create())
                 {
-                    powerShell.AddScript(File.ReadAllText(scriptFile));
+                    powerShell.AddScript(resetScript);
                     powerShell.AddParameters(
                         new Dictionary<string, string>
                             {
@@ -85,7 +89,7 @@ namespace RXPL.AD.Service
                 this.logger.Error(
                     () => string.Format("Error occured while resetting password for user: {0}", accountDetails.UserId),
                     ex);
-                throw;
+                throw new WebFaultException<string>(ex.Message, HttpStatusCode.BadRequest);
             }
 
             return true;

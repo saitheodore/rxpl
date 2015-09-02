@@ -110,7 +110,7 @@ namespace RXPL.AD.Web.Controllers
                         ex.Message);
             }
 
-            return this.View(directoryUser);
+            return this.View("Confirmation");
         }
 
         /// <summary>
