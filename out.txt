@@ -1,2 +1,0 @@
-UserId: testuser1
-Password: testPass
