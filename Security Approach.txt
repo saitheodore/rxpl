@@ -1,0 +1,12 @@
+Security Approach for password reset application
+------------------------------------------------
+
+1. A key needs to be generated which will be shared by both the calling application and the reset password application
+2. Before redirecting the user to the password reset application, the calling application will generate a signature in the following format
+	a. userid + current UTC Time + key (the key that we discussed on point no. 1)
+	b. The above concatenated string will be hashed (one way encryption) using SHA512 encryption
+	c. The hashed value will be converted to a Base64 string and will be passed to the reset application along with the user id and the UTC time which is used in the signature
+3. A sample url will look like this
+	/?userid=test&requestTime=10-09-2015 08:40:23&key=ZAf0eBXxiVk8Co0vVc79laID%2fNTV0H7MLrD7jx9pdbMmX06r9WLNMytFB%2bkZ4h5pV%2b1iyxxqwEUa1Hqg9F4g6Q%3d%3d
+4. The reset application will compute the hash again in the same format as discussed above and will compare the signature for an exact match. So unless some one knows the key (point no 1), they won't be able to forge the signature
+5. Apart from this, if some one gets hold of the query string and tries to re-run the request, it will be prevented by an expiration key. The request won't be valid after 20 secs (configurable) from the request time that is mentioned in the url. To counter that, if he/she changes the time to the current time to by-pass the expiration, the signature will be invalid as the requestTime is a part of the signature.
