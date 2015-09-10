@@ -15,7 +15,7 @@ Security Approach for password reset application
 Following is a code snippet (c#) for generating the Url with all the required information
 ------------------------------------------------------------------------------------------
 
-			var salt = ConfigurationManager.AppSettings["Salt"];
+	    var salt = ConfigurationManager.AppSettings["Salt"];
             var currentTime = DateTime.UtcNow;
 
             var signature = string.Format("{0}{1}{2}", userId, currentTime, salt);
