@@ -27,36 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{
 		Installer\uninstall_x86.bat = Installer\uninstall_x86.bat
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Installer", "Web Installer", "{3FF65C2D-CD66-4082-8021-7398F0614BD8}"
-EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "RXPL.WebApp.Installer", "RXPL.WebApp.Installer\RXPL.WebApp.Installer.wixproj", "{920BBB45-6B06-48F3-98A8-B37A7FD0E586}"
-EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Debug|Mixed Platforms = Debug|Mixed Platforms
-		Debug|x86 = Debug|x86
-		Release|Any CPU = Release|Any CPU
-		Release|Mixed Platforms = Release|Mixed Platforms
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|x86.ActiveCfg = Debug|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|x86.Build.0 = Debug|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Release|Any CPU.ActiveCfg = Release|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Release|Mixed Platforms.Build.0 = Release|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Release|x86.ActiveCfg = Release|x86
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{3FF65C2D-CD66-4082-8021-7398F0614BD8} = {06AB6A99-3FC8-4CAD-9D59-FF7B8A483A7C}
-		{920BBB45-6B06-48F3-98A8-B37A7FD0E586} = {3FF65C2D-CD66-4082-8021-7398F0614BD8}
 	EndGlobalSection
 EndGlobal
