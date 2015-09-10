@@ -87,12 +87,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RXPL.AD.Service\RXPL.AD.Service.csproj">
-      <Project>{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}</Project>
-      <Name>RXPL.AD.Service</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>

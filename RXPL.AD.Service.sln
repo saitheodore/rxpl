@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXPL.AD.Service", "RXPL.AD.Service\RXPL.AD.Service.csproj", "{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXPL.Services.Host", "RXPL.Services.Host\RXPL.Services.Host.csproj", "{78EBD84A-B371-42FD-85B1-CA45E06C549D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{657FC701-E505-4999-9B74-E21226DEFA91}"
 	ProjectSection(SolutionItems) = preProject
 		reset_password.ps1 = reset_password.ps1
@@ -31,12 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{
 		Installer\uninstall_x86.bat = Installer\uninstall_x86.bat
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXPL.AD.Web", "RXPL.AD.Web\RXPL.AD.Web.csproj", "{CEE33968-A317-459A-B8F5-051412234DDB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web App", "Web App", "{E79B86D7-0B03-4BB7-A7A1-7394E10AFAC0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8B4FD643-CCEC-4809-9A03-177BEBA19C05}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Installer", "Web Installer", "{3FF65C2D-CD66-4082-8021-7398F0614BD8}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "RXPL.WebApp.Installer", "RXPL.WebApp.Installer\RXPL.WebApp.Installer.wixproj", "{920BBB45-6B06-48F3-98A8-B37A7FD0E586}"
@@ -51,36 +41,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4}.Release|x86.ActiveCfg = Release|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D}.Release|x86.ActiveCfg = Release|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{CEE33968-A317-459A-B8F5-051412234DDB}.Release|x86.ActiveCfg = Release|Any CPU
 		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{920BBB45-6B06-48F3-98A8-B37A7FD0E586}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -96,9 +56,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{577A3CCA-CAF4-4F81-A8FB-C5715F9270E4} = {8B4FD643-CCEC-4809-9A03-177BEBA19C05}
-		{78EBD84A-B371-42FD-85B1-CA45E06C549D} = {8B4FD643-CCEC-4809-9A03-177BEBA19C05}
-		{CEE33968-A317-459A-B8F5-051412234DDB} = {E79B86D7-0B03-4BB7-A7A1-7394E10AFAC0}
 		{3FF65C2D-CD66-4082-8021-7398F0614BD8} = {06AB6A99-3FC8-4CAD-9D59-FF7B8A483A7C}
 		{920BBB45-6B06-48F3-98A8-B37A7FD0E586} = {3FF65C2D-CD66-4082-8021-7398F0614BD8}
 	EndGlobalSection
